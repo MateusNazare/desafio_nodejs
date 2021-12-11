@@ -20,6 +20,22 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+Route.post('/alunos', 'AlunosController.create')
+Route.put('/alunos/:id', 'AlunosController.update')
+Route.delete('/alunos/:id', 'AlunosController.delete')
+Route.get('/alunos/:id', 'AlunosController.getAlunoById')
+Route.get('/alunos/salas/:id', 'AlunosController.getSalas')
+
+Route.post('/professores', 'ProfessoresController.create')
+Route.put('/professores/:id', 'ProfessoresController.update')
+Route.delete('/professores/:id', 'ProfessoresController.delete')
+Route.get('/professores/:id', 'ProfessoresController.getProfessorById')
+
+Route.post('/salas', 'SalasController.create')
+Route.put('/salas/:id', 'SalasController.update')
+Route.delete('/salas/:id', 'SalasController.delete')
+Route.get('/salas/:id', 'SalasController.getSalaById')
+
+Route.put('/salas/add/:id', 'SalasController.addAluno')
+Route.delete('/salas/remove/:id', 'SalasController.removeAluno')
+Route.get('/salas/alunos/:id', 'SalasController.getAlunos')
